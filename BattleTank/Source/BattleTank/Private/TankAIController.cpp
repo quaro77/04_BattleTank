@@ -35,6 +35,29 @@
 
 	}
 
+	void ATankAIController::Tick(float DeltaTime)
+	{
+		Super::Tick(DeltaTime);
+		//UE_LOG(LogTemp, Warning, TEXT("P1 ticking."));
+		AimTowardPlayerTank();
+
+	}
+
+	void  ATankAIController::AimTowardPlayerTank()
+	{
+		if (!GetControlledTank()) { return; }
+		if (GetPlayerTank()) 
+		{		
+			FVector HitLocation = GetPlayerTank()->GetActorLocation();
+			GetControlledTank()->AimAt(HitLocation);
+		}
+
+
+	}
+
+
+
+
 	ATank* ATankAIController::GetControlledTank() const
 	{
 		return Cast<ATank>(GetPawn());
