@@ -22,10 +22,10 @@ private:
 		float MaxDegreesPerSecond = 20;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxLeftDegrees = -90;
+		float MaxLeftDegrees = -140;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MinRightDegrees = 90;
+		float MinRightDegrees = 140;
 	
 	
 };
