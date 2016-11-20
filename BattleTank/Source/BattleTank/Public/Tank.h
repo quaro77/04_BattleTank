@@ -7,6 +7,9 @@
 
 
 class UTankAimingComponent;
+class AProjectile;
+class UTankBarrel;
+
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -40,8 +43,19 @@ private:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBluePrint;
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 5000.0;
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeInSeconds = 3.0;
+
+	
+
+	UTankBarrel* Barrel = nullptr;
+
+	
+	double LastFireTime = 0.0;
 
 	
 	
