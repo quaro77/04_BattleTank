@@ -10,14 +10,9 @@ void ATankPlayerController::BeginPlay()
 
 	ATank* tank = GetControlledTank();
 
-	if (!tank) 
-	{
-		UE_LOG(LogTemp, Warning, TEXT("P1: Nessun tank controllato."));
-	}
-	else
-	{
+	
 		UE_LOG(LogTemp, Warning, TEXT("P1: Tank controllato: %s"), *(tank->GetName()));
-	}
+
 }
 
 void ATankPlayerController::Tick(float DeltaTime)
